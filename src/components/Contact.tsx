@@ -33,15 +33,15 @@ const Contact = () => {
         <div className="space-y-8">
           <div className="flex items-center justify-center gap-4">
             <Mail size={32} className="text-white" />
-            <a href="mailto:ShyanneCortes@gmail.com" className="text-2xl hover:text-accent transition-colors">
-              ShyanneCortes@gmail.com
+            <a href="mailto:armahsarpomaa16@gmail.com" className="text-2xl hover:text-accent transition-colors">
+              armahsarpomaa16@gmail.com
             </a>
           </div>
           
           <div className="flex items-center justify-center gap-4">
             <Linkedin size={32} className="text-white" />
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-accent transition-colors">
-              linkedin.com
+            <a href="https://www.linkedin.com/in/christabel-osei-919940212" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-accent transition-colors">
+              linkedin.com/in/christabel-osei
             </a>
           </div>
           

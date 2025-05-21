@@ -8,6 +8,7 @@ interface Project {
   description: string;
   tags: string[];
   image: string;
+  period: string;
   github?: string;
   demo?: string;
 }
@@ -32,28 +33,25 @@ const Projects = () => {
   // Projects data
   const projects: Project[] = [
     {
-      title: "Responsive Card Design",
-      description: "This is a project designed to change image quality based on the size of the user's device. The first card uses resolution switching, while the second card uses art-direction.",
-      tags: ["HTML", "CSS", "JS"],
+      title: "Ufund Platform Development",
+      description: "Implemented Helper functionality for searching and managing needs. Developed manager features to modify data with access restrictions. Built with Angular and Java Spring using Agile methodologies with Trello and Slack for tracking.",
+      tags: ["Angular", "Java", "Agile", "Trello", "Spring"],
+      period: "08/2024 - Present",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Top 10 Places to Eat",
-      description: "This is a project designed to show the user the top 10 highly rated places to eat in Rochester. This website uses localStorage and cookies to save the user's previous likes.",
-      tags: ["HTML", "CSS", "JS"],
+      title: "Incident Request Form Web App",
+      description: "Created a responsive form interface with client-side validation. Configured Node mailer for ServiceNow ticket creation. Developed Express.js server for form handling. Deployed and integrated with SharePoint.",
+      tags: ["HTML", "CSS", "JavaScript", "Express.js", "Node.js"],
+      period: "06/2024 - 08/2024",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Baltimore County - Hometown",
-      description: "This project involves creating a 10-page website about a place I've lived or visited. All of the content and styling are included in the database back-end, and PHP is used to retrieve that data.",
-      tags: ["PHP", "HTML", "CSS", "JS"],
+      title: "NBCUniversal TechWomen SharePoint Redesign",
+      description: "Enhanced user experience, promoted events, and increased membership sign-ups. Integrated updated branding, added events calendar, designed streamlined sign-up process, and updated content sections.",
+      tags: ["SharePoint", "UI Design", "UX Design"],
+      period: "06/2024 - 08/2024",
       image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "iSchool Website",
-      description: "This project creates a professional web presence for the iSchool by consuming data from an API to display information about programs, employment, and people.",
-      tags: ["HTML", "CSS", "React"],
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -67,44 +65,47 @@ const Projects = () => {
           PROJECTS
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
             <div key={project.title} className="project-card">
-              <div className="mb-6">
+              <div className="mb-5">
                 <img 
                   src={project.image}
                   alt={project.title} 
-                  className="rounded-lg w-full h-48 object-cover"
+                  className="rounded-lg w-full h-40 object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-bold mb-3">
-                {project.title}
-              </h3>
-              <p className="text-base mb-6">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map(tag => (
-                  <span key={tag} className="btn-tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div className="flex gap-4">
-                {project.demo && (
-                  <Button variant="outline" className="btn-outline">
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      Demo
-                    </a>
-                  </Button>
-                )}
-                {project.github && (
-                  <Button variant="outline" className="btn-outline">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      Source
-                    </a>
-                  </Button>
-                )}
+              <div className="px-2">
+                <p className="text-sm text-accent mb-2">{project.period}</p>
+                <h3 className="text-xl font-bold mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-sm mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="btn-tag text-xs py-1 px-2">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-3">
+                  {project.demo && (
+                    <Button size="sm" variant="outline" className="btn-outline text-xs">
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        Demo
+                      </a>
+                    </Button>
+                  )}
+                  {project.github && (
+                    <Button size="sm" variant="outline" className="btn-outline text-xs">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        Source
+                      </a>
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
           ))}

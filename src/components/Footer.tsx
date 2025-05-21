@@ -17,7 +17,7 @@ const Footer = () => {
             <Github size={20} />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/christabel-osei-919940212" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-white hover:text-accent transition-all duration-200"
@@ -26,7 +26,7 @@ const Footer = () => {
             <Linkedin size={20} />
           </a>
           <a 
-            href="mailto:ShyanneCortes@gmail.com" 
+            href="mailto:armahsarpomaa16@gmail.com" 
             className="text-white hover:text-accent transition-all duration-200"
             aria-label="Email"
           >
@@ -36,7 +36,7 @@ const Footer = () => {
         
         {/* Copyright */}
         <div className="text-sm text-white/70">
-          <p>© {new Date().getFullYear()} Shyanne Cortes. All Rights Reserved</p>
+          <p>© {new Date().getFullYear()} Christabel Osei. All Rights Reserved</p>
         </div>
       </div>
     </footer>

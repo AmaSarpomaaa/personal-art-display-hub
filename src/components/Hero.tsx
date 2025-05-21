@@ -8,12 +8,12 @@ const Hero = () => {
         {/* Main content */}
         <div className="md:w-2/3">
           <h1 className="text-6xl sm:text-7xl font-bold mb-6 animate-fade-in-up">
-            Hi, I'm <span className="text-accent">Shyanne</span>
+            Hi, I'm <span className="text-accent">Christabel</span>
           </h1>
           <p className="text-xl mb-10 max-w-2xl animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-            I'm a prospective software/web developer with 5 years of experience using HTML, CSS,
-            Javascript, MySQL and Java. I also have 2 years of experience with Python, PHP, C#,
-            Flutter, and React. Reach out if you'd like to learn more!
+            I'm a Computer Science student with experience in Python, Java, HTML, CSS, Javascript, TypeScript, 
+            Rest API, Node.js, Express.js, and Angular. I'm passionate about creating responsive and user-friendly 
+            web applications. Reach out if you'd like to learn more!
           </p>
           <div className="animate-fade-in-up" style={{ animationDelay: '300ms' }}>
             <Button asChild className="btn-primary">
@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="mt-12 md:mt-0 animate-fade-in" style={{ animationDelay: '400ms' }}>
           <img 
             src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" 
-            alt="Shyanne's Bitmoji" 
+            alt="Christabel's Bitmoji" 
             className="w-64 h-auto"
           />
         </div>

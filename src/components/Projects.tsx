@@ -71,12 +71,12 @@ const Projects = () => {
           Projects
         </h2>
         
-        <div className="space-y-24 mb-16">
-          {/* Featured Projects */}
+        <div className="space-y-16 mb-12">
+          {/* Featured Projects - Made smaller by reducing spacing and image size */}
           {projects.filter(p => p.featured).map((project, i) => (
-            <div key={project.title} className={`relative grid grid-cols-12 gap-4 items-center`}>
-              {/* Project Image */}
-              <div className={`col-span-12 lg:col-span-7 ${i % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+            <div key={project.title} className={`relative grid grid-cols-12 gap-3 items-center`}>
+              {/* Project Image - Made smaller */}
+              <div className={`col-span-12 lg:col-span-6 ${i % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                 <a 
                   href={project.demo} 
                   target="_blank" 
@@ -94,48 +94,48 @@ const Projects = () => {
                 </a>
               </div>
               
-              {/* Project Info */}
+              {/* Project Info - Made smaller with less padding and margin */}
               <div className={`col-span-12 lg:col-span-6 lg:col-start-${i % 2 === 0 ? '7' : '1'} lg:row-start-1 z-20`}>
                 <div className={`flex flex-col ${i % 2 === 0 ? 'lg:items-end text-right' : ''}`}>
-                  <p className="font-mono text-cyan mb-1">Featured Project</p>
-                  <h3 className="text-2xl font-bold mb-4">
+                  <p className="font-mono text-pink text-sm mb-1">Featured Project</p>
+                  <h3 className="text-xl font-bold mb-3">
                     <a 
                       href={project.demo} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="hover:text-cyan transition-colors"
+                      className="hover:text-pink transition-colors"
                     >
                       {project.title}
                     </a>
                   </h3>
-                  <div className="bg-navy-light p-5 rounded-lg shadow-lg mb-4">
-                    <p className="text-slate">{project.description}</p>
+                  <div className="bg-white/50 backdrop-blur-sm p-3 rounded-lg shadow-md mb-3">
+                    <p className="text-purple text-sm">{project.description}</p>
                   </div>
-                  <ul className={`flex flex-wrap mb-4 gap-2 ${i % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                  <ul className={`flex flex-wrap mb-3 gap-2 ${i % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
                     {project.tags.map(tag => (
-                      <li key={tag} className="text-slate-light font-mono text-sm">
+                      <li key={tag} className="text-purple-light font-mono text-xs">
                         {tag}
                       </li>
                     ))}
                   </ul>
-                  <div className="flex gap-4">
+                  <div className="flex gap-3">
                     <a 
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       aria-label="GitHub Repository"
-                      className="text-slate-lighter hover:text-cyan transition-colors"
+                      className="text-purple hover:text-pink transition-colors"
                     >
-                      <Github size={20} />
+                      <Github size={18} />
                     </a>
                     <a 
                       href={project.demo} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       aria-label="Live Demo"
-                      className="text-slate-lighter hover:text-cyan transition-colors"
+                      className="text-purple hover:text-pink transition-colors"
                     >
-                      <LinkIcon size={20} />
+                      <LinkIcon size={18} />
                     </a>
                   </div>
                 </div>
@@ -144,49 +144,49 @@ const Projects = () => {
           ))}
         </div>
         
-        {/* Other Projects */}
-        <h3 className="text-center text-2xl font-bold mb-8">Other Noteworthy Projects</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Other Projects - Made into a smaller grid with smaller cards */}
+        <h3 className="text-center text-xl font-bold mb-6">Other Noteworthy Projects</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {projects.filter(p => !p.featured).map((project) => (
-            <Card key={project.title} className="bg-navy-light border-navy-lighter h-full flex flex-col">
-              <div className="p-6 flex flex-col h-full">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="rounded-full bg-cyan/10 p-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan">
+            <Card key={project.title} className="bg-white/50 backdrop-blur-sm border-pink/10 h-full flex flex-col shadow-sm hover:shadow-md transition-shadow">
+              <div className="p-4 flex flex-col h-full">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="rounded-full bg-pink/10 p-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-pink">
                       <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
                       <polyline points="14 2 14 8 20 8"/>
                     </svg>
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex gap-3">
                     <a 
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       aria-label="GitHub Repository"
-                      className="text-slate-light hover:text-cyan transition-colors"
+                      className="text-purple hover:text-pink transition-colors"
                     >
-                      <Github size={20} />
+                      <Github size={16} />
                     </a>
                     <a 
                       href={project.demo} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       aria-label="Live Demo"
-                      className="text-slate-light hover:text-cyan transition-colors"
+                      className="text-purple hover:text-pink transition-colors"
                     >
-                      <LinkIcon size={20} />
+                      <LinkIcon size={16} />
                     </a>
                   </div>
                 </div>
-                <h4 className="font-bold text-xl mb-2 text-slate-lighter hover:text-cyan transition-colors">
+                <h4 className="font-bold text-lg mb-2 text-purple-dark hover:text-pink transition-colors">
                   <a href={project.demo} target="_blank" rel="noopener noreferrer">
                     {project.title}
                   </a>
                 </h4>
-                <p className="text-slate mb-6 flex-grow">{project.description}</p>
-                <ul className="flex flex-wrap gap-2 mt-auto">
+                <p className="text-purple text-sm mb-4 flex-grow">{project.description}</p>
+                <ul className="flex flex-wrap gap-1.5 mt-auto">
                   {project.tags.map(tag => (
-                    <li key={tag} className="text-slate-light font-mono text-xs">
+                    <li key={tag} className="text-purple-light font-mono text-xs">
                       {tag}
                     </li>
                   ))}
@@ -196,9 +196,9 @@ const Projects = () => {
           ))}
         </div>
         
-        {/* Show More Button */}
-        <div className="flex justify-center mt-12">
-          <Button asChild className="bg-transparent hover:bg-cyan/10 border border-cyan text-cyan px-7 py-5 rounded font-mono">
+        {/* Show More Button - Made smaller */}
+        <div className="flex justify-center mt-10">
+          <Button asChild className="bg-transparent hover:bg-pink/10 border border-pink text-pink px-5 py-2 text-sm rounded-full font-mono">
             <a href="https://github.com/username" target="_blank" rel="noopener noreferrer">
               View More Projects
             </a>

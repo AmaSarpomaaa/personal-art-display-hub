@@ -22,17 +22,17 @@ const Index = () => {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 bg-navy flex items-center justify-center">
+      <div className="fixed inset-0 bg-gradient-to-r from-pink-light to-blue-light flex items-center justify-center">
         <div className="flex flex-col items-center">
-          <div className="w-16 h-16 border-4 border-cyan/30 border-t-cyan rounded-full animate-spin"></div>
-          <p className="mt-4 font-mono text-cyan">Loading...</p>
+          <div className="w-16 h-16 border-4 border-pink/30 border-t-pink rounded-full animate-spin"></div>
+          <p className="mt-4 font-mono text-pink">Loading...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-navy text-slate">
+    <div className="min-h-screen bg-pink-bg text-purple">
       <Navbar />
       
       <main>
@@ -47,12 +47,12 @@ const Index = () => {
       
       {/* Fixed side elements - left (social links) */}
       <div className="fixed left-6 bottom-0 hidden lg:flex flex-col items-center">
-        <div className="flex flex-col space-y-6 after:content-[''] after:w-px after:h-24 after:bg-slate after:mx-auto after:mt-6">
+        <div className="flex flex-col space-y-6 after:content-[''] after:w-px after:h-24 after:bg-pink/50 after:mx-auto after:mt-6">
           <a 
             href="https://github.com/username" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-slate hover:text-cyan transform hover:-translate-y-1 transition-all duration-200"
+            className="text-purple hover:text-pink transform hover:-translate-y-1 transition-all duration-200"
             aria-label="GitHub"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -64,7 +64,7 @@ const Index = () => {
             href="https://linkedin.com/in/username" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-slate hover:text-cyan transform hover:-translate-y-1 transition-all duration-200"
+            className="text-purple hover:text-pink transform hover:-translate-y-1 transition-all duration-200"
             aria-label="LinkedIn"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -75,7 +75,7 @@ const Index = () => {
           </a>
           <a 
             href="mailto:hello@example.com" 
-            className="text-slate hover:text-cyan transform hover:-translate-y-1 transition-all duration-200"
+            className="text-purple hover:text-pink transform hover:-translate-y-1 transition-all duration-200"
             aria-label="Email"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -88,10 +88,10 @@ const Index = () => {
       
       {/* Fixed side elements - right (email) */}
       <div className="fixed right-6 bottom-0 hidden lg:flex flex-col items-center">
-        <div className="flex flex-col items-center after:content-[''] after:w-px after:h-24 after:bg-slate after:mx-auto after:mt-6">
+        <div className="flex flex-col items-center after:content-[''] after:w-px after:h-24 after:bg-pink/50 after:mx-auto after:mt-6">
           <a 
             href="mailto:hello@example.com" 
-            className="font-mono text-slate hover:text-cyan transform hover:-translate-y-1 transition-all duration-200 vertical-text"
+            className="font-mono text-purple hover:text-pink transform hover:-translate-y-1 transition-all duration-200"
             style={{ writingMode: 'vertical-rl' }}
           >
             hello@example.com
@@ -99,10 +99,14 @@ const Index = () => {
         </div>
       </div>
       
+      {/* Decorative elements */}
+      <div className="fixed top-20 left-10 text-pink/10 text-6xl hidden lg:block">✦</div>
+      <div className="fixed bottom-20 right-10 text-blue/10 text-6xl hidden lg:block">✦</div>
+      
       {/* Scroll to top button */}
       <button 
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 bg-cyan/20 hover:bg-cyan/30 text-cyan p-3 rounded-full transition-all duration-200 z-50"
+        className="fixed bottom-6 right-6 bg-pink/20 hover:bg-pink/30 text-pink p-3 rounded-full transition-all duration-200 z-50 shadow-md hover:shadow-lg"
         aria-label="Scroll to top"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

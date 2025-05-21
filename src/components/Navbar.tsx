@@ -28,17 +28,18 @@ const Navbar = () => {
   return (
     <header className={cn(
       "fixed top-0 w-full z-50 transition-all duration-300 ease-in-out py-4 px-6",
-      isScrolled ? "bg-navy/90 backdrop-blur-sm shadow-md" : "bg-transparent"
+      isScrolled ? "bg-white/90 backdrop-blur-sm shadow-md" : "bg-transparent"
     )}>
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         {/* Logo */}
-        <a href="#" className="text-cyan font-mono text-2xl font-semibold">
+        <a href="#" className="text-pink font-mono text-2xl font-semibold flex items-center">
+          <span className="mr-2">✨</span>
           Portfolio
         </a>
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-slate-lighter hover:text-cyan"
+          className="md:hidden text-purple hover:text-pink"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -54,16 +55,16 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <ol className="flex space-x-8">
             {navItems.map((item, i) => (
-              <li key={item.name} className="text-slate-light hover:text-cyan transition-colors">
+              <li key={item.name} className="text-purple hover:text-pink transition-colors">
                 <a href={item.href} className="font-mono group">
-                  <span className="text-cyan mr-1">{`0${i + 1}.`}</span>
-                  <span className="group-hover:text-cyan transition-colors">{item.name}</span>
+                  <span className="text-pink mr-1">{`0${i + 1}.`}</span>
+                  <span className="group-hover:text-pink transition-colors">{item.name}</span>
                 </a>
               </li>
             ))}
           </ol>
           <div>
-            <Button asChild variant="outline" className="border-cyan text-cyan hover:bg-cyan/10">
+            <Button asChild variant="outline" className="border-pink text-pink hover:bg-pink/10">
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
             </Button>
           </div>
@@ -71,23 +72,23 @@ const Navbar = () => {
 
         {/* Mobile Navigation Overlay */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[76px] bg-navy-light/95 flex justify-center items-center z-40">
+          <div className="md:hidden fixed inset-0 top-[76px] bg-white/95 backdrop-blur-md flex justify-center items-center z-40">
             <nav className="flex flex-col items-center">
               <ol className="flex flex-col items-center space-y-6 mb-8">
                 {navItems.map((item, i) => (
-                  <li key={item.name} className="text-slate-light hover:text-cyan transition-colors text-lg">
+                  <li key={item.name} className="text-purple hover:text-pink transition-colors text-lg">
                     <a 
                       href={item.href}
                       className="font-mono"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      <span className="text-cyan mr-2">{`0${i + 1}.`}</span>
+                      <span className="text-pink mr-2">{`0${i + 1}.`}</span>
                       <span>{item.name}</span>
                     </a>
                   </li>
                 ))}
               </ol>
-              <Button asChild variant="outline" className="border-cyan text-cyan hover:bg-cyan/10">
+              <Button asChild variant="outline" className="border-pink text-pink hover:bg-pink/10">
                 <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
               </Button>
             </nav>

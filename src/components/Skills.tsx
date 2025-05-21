@@ -83,7 +83,11 @@ const Skills = () => {
                         className="bg-cyan h-2.5 rounded-full"
                         style={{ 
                           width: `${skill.level}%`, 
-                          animation: isVisible ? `growWidth 1s ease-out forwards ${index * 0.2}s` : 'none',
+                          animationDelay: isVisible ? `${index * 0.2}s` : '0s',
+                          animationName: isVisible ? 'growWidth' : 'none',
+                          animationDuration: '1s',
+                          animationTimingFunction: 'ease-out',
+                          animationFillMode: 'forwards'
                         }}
                       ></div>
                     </div>
@@ -95,12 +99,14 @@ const Skills = () => {
         </Tabs>
       </div>
 
-      <style jsx>{`
+      <style>
+        {`
         @keyframes growWidth {
           from { width: 0; }
-          to { width: ${isVisible ? 'calc(var(--level) * 1%)' : '0'}; }
+          to { width: 100%; }
         }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };

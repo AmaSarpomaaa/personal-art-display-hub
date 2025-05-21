@@ -53,18 +53,23 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				navy: {
-					DEFAULT: '#0a192f',
-					light: '#112240',
-					lighter: '#233554',
+				// New girly color scheme
+				pink: {
+					DEFAULT: '#ff73b3',
+					light: '#ffadd0',
+					lighter: '#ffd6e6',
+					bg: '#fff0f8',
 				},
-				slate: {
-					DEFAULT: '#8892b0',
-					light: '#a8b2d1',
-					lighter: '#ccd6f6',
+				blue: {
+					DEFAULT: '#8ca9f0',
+					light: '#b1c3f5',
+					lighter: '#d7e0fb',
 				},
-				white: '#e6f1ff',
-				cyan: '#64ffda',
+				purple: {
+					DEFAULT: '#755a9b',
+					light: '#9d8cb6',
+					dark: '#5d4580',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -72,7 +77,7 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
+				sans: ['Quicksand', 'Inter', 'sans-serif'],
 				mono: ['"Fira Code"', 'monospace'],
 			},
 			keyframes: {
@@ -109,13 +114,26 @@ export default {
 					'100%': {
 						opacity: '1'
 					}
+				},
+				'bounce': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in-up': 'fade-in-up 0.5s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out'
+				'fade-in': 'fade-in 0.5s ease-out',
+				'bounce': 'bounce 3s infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-pastel': 'linear-gradient(90deg, #ffadd0 0%, #b1c3f5 100%)'
 			}
 		}
 	},

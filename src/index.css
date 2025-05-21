@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,35 +7,36 @@
 
 @layer base {
   :root {
-    --background: 210 33% 9%; /* #0a192f */
-    --foreground: 225 26% 63%; /* #8892b0 */
+    /* Pink and blue theme */
+    --background: 320 100% 97%; /* #fff0f8 - light pink */
+    --foreground: 260 30% 40%; /* #755a9b - muted purple */
 
-    --card: 217 33% 17%; /* #112240 */
-    --card-foreground: 227 26% 73%; /* #a8b2d1 */
+    --card: 260 30% 97%; /* #f5f2fb - super light lavender */
+    --card-foreground: 260 30% 40%; /* #755a9b - muted purple */
 
-    --popover: 217 33% 17%; /* #112240 */
-    --popover-foreground: 227 26% 73%; /* #a8b2d1 */
+    --popover: 260 30% 97%; /* #f5f2fb - super light lavender */
+    --popover-foreground: 260 30% 40%; /* #755a9b - muted purple */
 
-    --primary: 171 100% 69%; /* #64ffda */
-    --primary-foreground: 210 33% 9%; /* #0a192f */
+    --primary: 330 100% 71%; /* #ff73b3 - hot pink */
+    --primary-foreground: 0 0% 100%; /* #ffffff - white */
 
-    --secondary: 221 30% 24%; /* #233554 */
-    --secondary-foreground: 225 20% 90%; /* #ccd6f6 */
+    --secondary: 225 73% 73%; /* #8ca9f0 - soft blue */
+    --secondary-foreground: 0 0% 100%; /* #ffffff - white */
 
-    --muted: 210 33% 15%; /* slightly lighter navy */
-    --muted-foreground: 225 20% 60%; /* dimmed slate */
+    --muted: 320 30% 95%; /* #faeaf4 - very light pink */
+    --muted-foreground: 260 20% 60%; /* #9d8cb6 - light purple */
 
-    --accent: 171 100% 69%; /* #64ffda */
-    --accent-foreground: 210 33% 9%; /* #0a192f */
+    --accent: 225 73% 73%; /* #8ca9f0 - soft blue */
+    --accent-foreground: 0 0% 100%; /* #ffffff - white */
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 17%; /* #112240 */
-    --input: 217 33% 17%; /* #112240 */
-    --ring: 171 100% 69%; /* #64ffda */
+    --border: 320 20% 90%; /* #f2e3ed - very light pink border */
+    --input: 320 20% 90%; /* #f2e3ed - very light pink input */
+    --ring: 330 100% 71%; /* #ff73b3 - hot pink */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 
@@ -45,15 +46,15 @@
   }
   
   body {
-    @apply bg-navy text-slate font-sans;
+    @apply bg-pink-bg text-purple font-sans;
   }
   
   ::selection {
-    @apply bg-cyan/20 text-cyan;
+    @apply bg-pink/20 text-pink;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply text-slate-lighter font-semibold;
+    @apply text-purple-dark font-semibold;
   }
   
   h1 {
@@ -69,7 +70,7 @@
   }
   
   p {
-    @apply text-slate text-base sm:text-lg;
+    @apply text-purple text-base sm:text-lg;
   }
   
   section {
@@ -85,7 +86,57 @@
   }
   
   .numbered-heading::before {
-    @apply content-[attr(data-number)] mr-2 text-cyan font-mono font-normal text-lg sm:text-xl;
+    @apply content-[attr(data-number)] mr-2 text-pink font-mono font-normal text-lg sm:text-xl;
+  }
+
+  /* Girly decorative elements */
+  .sparkle::before,
+  .sparkle::after {
+    @apply content-['✦'] text-pink absolute opacity-70;
+  }
+
+  .sparkle::before {
+    @apply -left-6 top-0;
+  }
+
+  .sparkle::after {
+    @apply -right-6 bottom-0;
+  }
+
+  .heart-bullet li::before {
+    @apply content-['♥'] text-pink mr-2;
+  }
+
+  /* Button effects for more girly feel */
+  .btn-girly {
+    @apply relative overflow-hidden transition-all duration-300 bg-gradient-to-r from-pink to-blue text-white rounded-full px-6 py-3 shadow-md hover:shadow-lg hover:scale-105 border-2 border-white;
+  }
+
+  .btn-girly::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full bg-white/20 transform -translate-x-full transition-transform duration-300;
+  }
+
+  .btn-girly:hover::before {
+    @apply translate-x-0;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.4; transform: scale(1); }
+  }
+
+  .sparkle-element {
+    animation: sparkle 2s ease-in-out infinite;
   }
 }
-

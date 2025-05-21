@@ -53,22 +53,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// New girly color scheme
-				pink: {
-					DEFAULT: '#ff73b3',
-					light: '#ffadd0',
-					lighter: '#ffd6e6',
-					bg: '#fff0f8',
-				},
-				blue: {
-					DEFAULT: '#8ca9f0',
-					light: '#b1c3f5',
-					lighter: '#d7e0fb',
-				},
 				purple: {
-					DEFAULT: '#755a9b',
-					light: '#9d8cb6',
-					dark: '#5d4580',
+					DEFAULT: '#4a1e9e', /* Base purple */
+					light: '#6b3cc0',
+					dark: '#2a1259',
 				},
 			},
 			borderRadius: {
@@ -132,9 +120,6 @@ export default {
 				'bounce': 'bounce 3s infinite',
 				'wiggle': 'wiggle 1s ease-in-out infinite'
 			},
-			backgroundImage: {
-				'gradient-pastel': 'linear-gradient(90deg, #ffadd0 0%, #b1c3f5 100%)'
-			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

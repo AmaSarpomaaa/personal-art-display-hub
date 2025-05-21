@@ -19,63 +19,50 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'} bg-gradient-to-tr from-white via-pink-bg to-white`}>
-      <div className="max-w-4xl mx-auto">
-        <h2 className="numbered-heading text-2xl sm:text-3xl font-bold mb-10 sparkle relative" data-number="01">
-          About Me
+    <section id="about" className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'} bg-card`}>
+      <div className="max-w-6xl mx-auto">
+        <h2 className="numbered-heading mb-12">
+          ABOUT
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
-          <div className="md:col-span-3">
-            <div className="space-y-4 text-purple">
-              <p>
-                Hello! I'm Jane, and I love creating beautiful experiences on the web. 
-                My journey into web development began when I discovered my passion for 
-                combining creativity with logic through designing custom blog themes.
-              </p>
-              
-              <p>
-                Today, I've had the amazing opportunity to work with 
-                <span className="text-pink"> a creative design agency</span>,
-                <span className="text-pink"> an innovative tech startup</span>, and
-                <span className="text-pink"> a global beauty brand</span>. 
-                I'm passionate about creating experiences that are not only functional but also delightful!
-              </p>
-              
-              <p>
-                Here are some technologies I've been playing with lately:
-              </p>
-              
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-4 heart-bullet">
-                {[
-                  "JavaScript (ES6+)", 
-                  "TypeScript", 
-                  "React", 
-                  "Next.js", 
-                  "Node.js", 
-                  "Tailwind CSS"
-                ].map((tech, i) => (
-                  <li key={i} className="flex items-center font-mono text-sm">
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div>
+            <img 
+              src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" 
+              alt="Shyanne's Bitmoji" 
+              className="w-60 h-auto mx-auto"
+            />
           </div>
           
-          <div className="md:col-span-2">
-            <div className="relative group">
-              <div className="w-full relative z-10">
-                <div className="relative rounded-2xl overflow-hidden aspect-square transform rotate-3 transition-all group-hover:rotate-0 duration-300">
-                  <img 
-                    src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" 
-                    alt="Jane Smith" 
-                    className="w-full h-full object-cover transition duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink/40 to-blue/40 mix-blend-multiply hover:opacity-0 transition duration-300"></div>
-                </div>
+          <div className="space-y-12">
+            <div className="flex items-start gap-6">
+              <div className="text-accent mt-1">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 16L7 11M12 16L17 11M12 16V4M21 21H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
-              <div className="absolute -inset-1.5 border-2 border-pink rounded-2xl z-0 group-hover:translate-x-2 group-hover:translate-y-2 transition"></div>
+              <div>
+                <h3 className="text-2xl font-bold mb-3">Front-end Developer</h3>
+                <p className="text-lg">
+                  I'm a front-end developer with experience in building responsive and optimized sites.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-6">
+              <div className="text-accent mt-1">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M3 9H21" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M9 21V9" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-3">UI Designer</h3>
+                <p className="text-lg">
+                  I have designed multiple landing pages and have created design systems as well.
+                </p>
+              </div>
             </div>
           </div>
         </div>

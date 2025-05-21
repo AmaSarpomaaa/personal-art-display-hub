@@ -1,6 +1,10 @@
 
 import { useState, useEffect } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+interface TechItem {
+  name: string;
+  icon: string;
+}
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -19,94 +23,52 @@ const Skills = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Skills data
-  const skills = {
-    frontend: [
-      { name: "HTML & CSS", level: 90 },
-      { name: "JavaScript", level: 85 },
-      { name: "React", level: 80 },
-      { name: "TypeScript", level: 75 },
-      { name: "Tailwind CSS", level: 85 },
-    ],
-    backend: [
-      { name: "Node.js", level: 75 },
-      { name: "Express", level: 70 },
-      { name: "MongoDB", level: 65 },
-      { name: "PostgreSQL", level: 60 },
-      { name: "GraphQL", level: 55 },
-    ],
-    other: [
-      { name: "Git", level: 80 },
-      { name: "UI/UX Design", level: 65 },
-      { name: "AWS", level: 50 },
-      { name: "Docker", level: 45 },
-      { name: "Testing", level: 60 },
-    ],
-  };
+  // Technology data
+  const technologies: TechItem[] = [
+    { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    { name: "JS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" },
+    { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+    { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+    { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+    { name: "Photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" },
+    { name: "Illustrator", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" }
+  ];
 
   return (
     <section 
       id="skills" 
-      className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'} bg-background`}
     >
-      <div className="max-w-4xl mx-auto">
-        <h2 className="numbered-heading text-2xl sm:text-3xl font-bold mb-10" data-number="02">
-          Skills
+      <div className="max-w-6xl mx-auto">
+        <h2 className="numbered-heading mb-16">
+          EXPERIENCE
         </h2>
 
-        <Tabs defaultValue="frontend" className="w-full">
-          <div className="flex justify-center mb-8">
-            <TabsList className="bg-navy-light border border-secondary">
-              <TabsTrigger value="frontend" className="data-[state=active]:bg-secondary data-[state=active]:text-slate-lighter">
-                Frontend
-              </TabsTrigger>
-              <TabsTrigger value="backend" className="data-[state=active]:bg-secondary data-[state=active]:text-slate-lighter">
-                Backend
-              </TabsTrigger>
-              <TabsTrigger value="other" className="data-[state=active]:bg-secondary data-[state=active]:text-slate-lighter">
-                Other
-              </TabsTrigger>
-            </TabsList>
-          </div>
-
-          {Object.entries(skills).map(([category, categorySkills]) => (
-            <TabsContent key={category} value={category} className="mt-0">
-              <div className="space-y-6">
-                {categorySkills.map((skill, index) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-slate-light font-mono">{skill.name}</span>
-                      <span className="text-cyan font-mono">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-navy-light rounded-full h-2.5">
-                      <div 
-                        className="bg-cyan h-2.5 rounded-full"
-                        style={{ 
-                          width: `${skill.level}%`, 
-                          animationDelay: isVisible ? `${index * 0.2}s` : '0s',
-                          animationName: isVisible ? 'growWidth' : 'none',
-                          animationDuration: '1s',
-                          animationTimingFunction: 'ease-out',
-                          animationFillMode: 'forwards'
-                        }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-8">
+          {technologies.map((tech, index) => (
+            <div 
+              key={tech.name} 
+              className="tech-circle"
+              style={{ 
+                animationDelay: `${index * 0.1}s`,
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'opacity 0.5s ease, transform 0.5s ease',
+                transitionDelay: `${index * 0.1}s`
+              }}
+            >
+              <div className="tech-circle-inner">
+                <img src={tech.icon} alt={tech.name} />
               </div>
-            </TabsContent>
+              <p className="text-center font-medium">{tech.name}</p>
+            </div>
           ))}
-        </Tabs>
+        </div>
       </div>
-
-      <style>
-        {`
-        @keyframes growWidth {
-          from { width: 0; }
-          to { width: 100%; }
-        }
-        `}
-      </style>
     </section>
   );
 };

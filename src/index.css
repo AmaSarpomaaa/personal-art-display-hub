@@ -7,38 +7,40 @@
 
 @layer base {
   :root {
-    /* Mixed pink, blue, and yellow theme */
-    --background: 255 60% 10%; /* Deep pink-purple background */
-    --foreground: 0 0% 100%; /* White text */
+    /* Pink, yellow, and light blue theme */
+    --background: 320 70% 95%; /* Light pink background */
+    --foreground: 240 10% 20%; /* Dark text */
 
-    --card: 255 50% 20%; /* Slightly lighter pink-purple for cards */
-    --card-foreground: 0 0% 100%; /* White text on cards */
+    --card: 320 60% 97%; /* Slightly darker pink for cards */
+    --card-foreground: 240 10% 20%; /* Dark text on cards */
 
-    --popover: 255 50% 20%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 320 60% 97%;
+    --popover-foreground: 240 10% 20%;
 
-    --primary: 200 70% 60%; /* Blue for primary elements */
-    --primary-foreground: 0 0% 100%;
+    --primary: 200 80% 70%; /* Light blue for primary elements */
+    --primary-foreground: 240 10% 20%;
 
-    --secondary: 50 90% 70%; /* Yellow for secondary elements */
-    --secondary-foreground: 0 0% 20%;
+    --secondary: 50 90% 80%; /* Light yellow for secondary elements */
+    --secondary-foreground: 240 10% 20%;
 
-    --muted: 255 30% 30%;
-    --muted-foreground: 0 0% 90%;
+    --muted: 320 20% 85%;
+    --muted-foreground: 240 10% 40%;
 
-    --accent: 320 70% 70%; /* Pink accent */
-    --accent-foreground: 0 0% 100%;
+    --accent: 320 80% 75%; /* Stronger pink accent */
+    --accent-foreground: 240 10% 20%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 255 40% 30%;
-    --input: 255 40% 30%;
-    --ring: 320 70% 60%; /* Pink ring */
+    --border: 320 30% 85%;
+    --input: 320 30% 85%;
+    --ring: 200 80% 70%; /* Light blue ring */
 
     --radius: 0.75rem;
   }
 }
+
+/* ... keep existing code (base styling for body, headings, sections, etc.) */
 
 @layer base {
   * {
@@ -79,7 +81,7 @@
   
   /* Tech tag styling */
   .tech-tag {
-    @apply px-5 py-2 bg-primary/30 text-white rounded-full text-sm font-medium;
+    @apply px-5 py-2 bg-primary/30 text-foreground rounded-full text-sm font-medium;
   }
 
   /* Circular tech icons */
@@ -97,12 +99,12 @@
 
   /* Project card styling */
   .project-card {
-    @apply bg-card rounded-xl p-6 h-full;
+    @apply bg-card rounded-xl p-6 h-full shadow-md hover:shadow-lg transition-all duration-300;
   }
 
   /* Button styles */
   .btn-primary {
-    @apply bg-primary text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-primary/80 transition-colors;
+    @apply bg-primary text-foreground px-8 py-4 rounded-lg text-lg font-medium hover:bg-primary/80 transition-colors;
   }
 
   .btn-outline {
@@ -110,7 +112,7 @@
   }
 
   .btn-tag {
-    @apply px-5 py-2 bg-primary/30 text-white rounded-full text-sm font-medium;
+    @apply px-5 py-2 bg-primary/30 text-foreground rounded-full text-sm font-medium;
   }
   
   /* About section hover effects */
@@ -128,7 +130,7 @@
   
   /* Resume section styling */
   .resume-card {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white/50 backdrop-blur-sm border border-primary/20;
   }
 }
 

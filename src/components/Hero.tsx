@@ -16,18 +16,19 @@ const Hero = () => {
             web applications. Reach out if you'd like to learn more!
           </p>
           <div className="animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-            <Button asChild className="btn-primary">
+            <Button asChild className="bg-primary hover:bg-secondary hover:text-black transition-all duration-300">
               <a href="#contact">Contact Me</a>
             </Button>
           </div>
         </div>
         
         {/* Bitmoji */}
-        <div className="mt-12 md:mt-0 animate-fade-in" style={{ animationDelay: '400ms' }}>
+        <div className="mt-12 md:mt-0 animate-fade-in relative" style={{ animationDelay: '400ms' }}>
+          <div className="absolute -inset-4 bg-gradient-to-r from-accent via-primary to-secondary opacity-30 blur-lg rounded-full"></div>
           <img 
             src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" 
             alt="Christabel's Bitmoji" 
-            className="w-64 h-auto"
+            className="w-64 h-auto relative rounded-full border-4 border-accent/50"
           />
         </div>
       </div>

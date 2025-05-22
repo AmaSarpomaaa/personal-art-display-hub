@@ -11,7 +11,7 @@ const Footer = () => {
             href="https://github.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-white hover:text-accent transition-all duration-200"
+            className="text-white hover:text-secondary transition-all duration-300 transform hover:scale-110"
             aria-label="GitHub"
           >
             <Github size={20} />
@@ -20,14 +20,14 @@ const Footer = () => {
             href="https://www.linkedin.com/in/christabel-osei-919940212" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-white hover:text-accent transition-all duration-200"
+            className="text-white hover:text-primary transition-all duration-300 transform hover:scale-110"
             aria-label="LinkedIn"
           >
             <Linkedin size={20} />
           </a>
           <a 
             href="mailto:armahsarpomaa16@gmail.com" 
-            className="text-white hover:text-accent transition-all duration-200"
+            className="text-white hover:text-accent transition-all duration-300 transform hover:scale-110"
             aria-label="Email"
           >
             <Mail size={20} />

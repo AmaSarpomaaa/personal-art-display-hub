@@ -7,23 +7,23 @@
 
 @layer base {
   :root {
-    /* Purple theme based on uploaded images */
-    --background: 270 60% 10%; /* Deep purple background */
+    /* Mixed pink, blue, and yellow theme */
+    --background: 255 60% 10%; /* Deep pink-purple background */
     --foreground: 0 0% 100%; /* White text */
 
-    --card: 270 50% 20%; /* Slightly lighter purple for cards */
+    --card: 255 50% 20%; /* Slightly lighter pink-purple for cards */
     --card-foreground: 0 0% 100%; /* White text on cards */
 
-    --popover: 270 50% 20%;
+    --popover: 255 50% 20%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 270 70% 60%; /* Bright purple for primary elements */
+    --primary: 200 70% 60%; /* Blue for primary elements */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 70% 70%; /* Lighter purple for secondary elements */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 50 90% 70%; /* Yellow for secondary elements */
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 270 30% 30%;
+    --muted: 255 30% 30%;
     --muted-foreground: 0 0% 90%;
 
     --accent: 320 70% 70%; /* Pink accent */
@@ -32,9 +32,9 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 40% 30%;
-    --input: 270 40% 30%;
-    --ring: 270 70% 60%;
+    --border: 255 40% 30%;
+    --input: 255 40% 30%;
+    --ring: 320 70% 60%; /* Pink ring */
 
     --radius: 0.75rem;
   }
@@ -88,7 +88,7 @@
   }
   
   .tech-circle-inner {
-    @apply w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center mb-2;
+    @apply w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center mb-2 transition-all duration-300;
   }
 
   .tech-circle img {
@@ -111,6 +111,19 @@
 
   .btn-tag {
     @apply px-5 py-2 bg-primary/30 text-white rounded-full text-sm font-medium;
+  }
+  
+  /* About section hover effects */
+  .about-item {
+    @apply transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg rounded-lg p-4;
+  }
+  
+  .about-item:hover {
+    @apply bg-gradient-to-r from-accent/20 to-primary/20;
+  }
+  
+  .about-item:hover .about-icon {
+    @apply text-secondary scale-110;
   }
 }
 

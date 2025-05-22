@@ -27,53 +27,59 @@ const About = () => {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
+          <div className="flex justify-center items-center">
             <img 
               src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" 
               alt="Christabel's Bitmoji" 
-              className="w-60 h-auto mx-auto"
+              className="w-60 h-auto rounded-full border-4 border-accent/50 hover:border-secondary transition-all duration-300 hover:scale-105"
             />
           </div>
           
-          <div className="space-y-12">
-            <div className="flex items-start gap-6">
-              <div className="text-accent mt-1">
-                <School width="32" height="32" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Education</h3>
-                <p className="text-lg">
-                  Rochester Institute of Technology<br />
-                  Bachelor of Science in Computer Science<br />
-                  Expected May 2027
-                </p>
+          <div className="space-y-8">
+            <div className="about-item">
+              <div className="flex items-start gap-6">
+                <div className="about-icon text-accent mt-1 transition-all duration-300">
+                  <School width="32" height="32" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-3">Education</h3>
+                  <p className="text-lg">
+                    Rochester Institute of Technology<br />
+                    Bachelor of Science in Computer Science<br />
+                    Expected May 2027
+                  </p>
+                </div>
               </div>
             </div>
             
-            <div className="flex items-start gap-6">
-              <div className="text-accent mt-1">
-                <Award width="32" height="32" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Certifications</h3>
-                <p className="text-lg">
-                  HTML & CSS<br />
-                  Product Management<br />
-                  Introduction to Generative AI
-                </p>
+            <div className="about-item">
+              <div className="flex items-start gap-6">
+                <div className="about-icon text-accent mt-1 transition-all duration-300">
+                  <Award width="32" height="32" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-3">Certifications</h3>
+                  <p className="text-lg">
+                    HTML & CSS<br />
+                    Product Management<br />
+                    Introduction to Generative AI
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-start gap-6">
-              <div className="text-accent mt-1">
-                <FileCode width="32" height="32" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Software Skills</h3>
-                <p className="text-lg">
-                  Excel, Visual Studio, Trello, Microsoft Office, Slack,<br />
-                  GitHub, Bootstrap, Jira, Confluence, Postman, SharePoint
-                </p>
+            <div className="about-item">
+              <div className="flex items-start gap-6">
+                <div className="about-icon text-accent mt-1 transition-all duration-300">
+                  <FileCode width="32" height="32" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-3">Software Skills</h3>
+                  <p className="text-lg">
+                    Excel, Visual Studio, Trello, Microsoft Office, Slack,<br />
+                    GitHub, Bootstrap, Jira, Confluence, Postman, SharePoint
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -7,40 +7,38 @@
 
 @layer base {
   :root {
-    /* Purple and blue theme */
-    --background: 260 60% 97%; /* Light purple background */
-    --foreground: 240 10% 20%; /* Dark text */
+    /* Mixed pink, blue, and yellow theme */
+    --background: 255 60% 10%; /* Deep pink-purple background */
+    --foreground: 0 0% 100%; /* White text */
 
-    --card: 260 60% 99%; /* Slightly darker purple for cards */
-    --card-foreground: 240 10% 20%; /* Dark text on cards */
+    --card: 255 50% 20%; /* Slightly lighter pink-purple for cards */
+    --card-foreground: 0 0% 100%; /* White text on cards */
 
-    --popover: 260 60% 99%;
-    --popover-foreground: 240 10% 20%;
+    --popover: 255 50% 20%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 230 80% 60%; /* Blue for primary elements */
+    --primary: 200 70% 60%; /* Blue for primary elements */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 260 70% 70%; /* Light purple for secondary elements */
-    --secondary-foreground: 240 10% 20%;
+    --secondary: 50 90% 70%; /* Yellow for secondary elements */
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 260 20% 90%;
-    --muted-foreground: 240 10% 40%;
+    --muted: 255 30% 30%;
+    --muted-foreground: 0 0% 90%;
 
-    --accent: 230 70% 50%; /* Blue accent */
+    --accent: 320 70% 70%; /* Pink accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 260 30% 90%;
-    --input: 260 30% 90%;
-    --ring: 230 80% 60%; /* Blue ring */
+    --border: 255 40% 30%;
+    --input: 255 40% 30%;
+    --ring: 320 70% 60%; /* Pink ring */
 
     --radius: 0.75rem;
   }
 }
-
-/* ... keep existing code (base styling for body, headings, sections, etc.) */
 
 @layer base {
   * {
@@ -81,7 +79,7 @@
   
   /* Tech tag styling */
   .tech-tag {
-    @apply px-5 py-2 bg-primary/30 text-foreground rounded-full text-sm font-medium;
+    @apply px-5 py-2 bg-primary/30 text-white rounded-full text-sm font-medium;
   }
 
   /* Circular tech icons */
@@ -99,12 +97,12 @@
 
   /* Project card styling */
   .project-card {
-    @apply bg-card rounded-xl p-6 h-full shadow-md hover:shadow-lg transition-all duration-300;
+    @apply bg-card rounded-xl p-6 h-full;
   }
 
   /* Button styles */
   .btn-primary {
-    @apply bg-primary text-foreground px-8 py-4 rounded-lg text-lg font-medium hover:bg-primary/80 transition-colors;
+    @apply bg-primary text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-primary/80 transition-colors;
   }
 
   .btn-outline {
@@ -112,7 +110,7 @@
   }
 
   .btn-tag {
-    @apply px-5 py-2 bg-primary/30 text-foreground rounded-full text-sm font-medium;
+    @apply px-5 py-2 bg-primary/30 text-white rounded-full text-sm font-medium;
   }
   
   /* About section hover effects */
@@ -130,7 +128,7 @@
   
   /* Resume section styling */
   .resume-card {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white/50 backdrop-blur-sm border border-primary/20;
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
 }
 

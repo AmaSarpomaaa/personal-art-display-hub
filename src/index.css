@@ -7,34 +7,34 @@
 
 @layer base {
   :root {
-    /* Pink, yellow, and light blue theme */
-    --background: 320 70% 95%; /* Light pink background */
+    /* Purple and blue theme */
+    --background: 260 60% 97%; /* Light purple background */
     --foreground: 240 10% 20%; /* Dark text */
 
-    --card: 320 60% 97%; /* Slightly darker pink for cards */
+    --card: 260 60% 99%; /* Slightly darker purple for cards */
     --card-foreground: 240 10% 20%; /* Dark text on cards */
 
-    --popover: 320 60% 97%;
+    --popover: 260 60% 99%;
     --popover-foreground: 240 10% 20%;
 
-    --primary: 200 80% 70%; /* Light blue for primary elements */
-    --primary-foreground: 240 10% 20%;
+    --primary: 230 80% 60%; /* Blue for primary elements */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 50 90% 80%; /* Light yellow for secondary elements */
+    --secondary: 260 70% 70%; /* Light purple for secondary elements */
     --secondary-foreground: 240 10% 20%;
 
-    --muted: 320 20% 85%;
+    --muted: 260 20% 90%;
     --muted-foreground: 240 10% 40%;
 
-    --accent: 320 80% 75%; /* Stronger pink accent */
-    --accent-foreground: 240 10% 20%;
+    --accent: 230 70% 50%; /* Blue accent */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 320 30% 85%;
-    --input: 320 30% 85%;
-    --ring: 200 80% 70%; /* Light blue ring */
+    --border: 260 30% 90%;
+    --input: 260 30% 90%;
+    --ring: 230 80% 60%; /* Blue ring */
 
     --radius: 0.75rem;
   }
